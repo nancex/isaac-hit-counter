@@ -287,7 +287,7 @@ function hudstat:__updatePosition()
 end
 
 function hudstat:__forCompat()
-	if PlanetariumChance then
+	if REPENTOGON and Options.StatHUDPlanetarium == true or PlanetariumChance then
 		self.coords = self.coords + Vector(0, 12)
 	end
 end
