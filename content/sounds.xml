@@ -1,0 +1,5 @@
+<sounds root="sfx/">
+    <sound name="MetalPipe">
+        <sample weight="1" path="metal-pipe.wav" />
+    </sound>
+</sounds>

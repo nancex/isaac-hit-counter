@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.1" encoding="UTF-8"?>
 <metadata>
     <name>Hit Counter by nancex</name>
     <directory>isaac_hit_counter</directory>
@@ -7,20 +7,45 @@
 
         Features:
             - Displays a counter for total hits taken in the run under HUD stats.
+            - Does not track self damage (e.g. blood donation, curse room...)
             - Icon changes based on the number of hits taken.
 
-        TO-DO (maybe?):
-            - Add configuration options.
-            - Kills player if hit count exceeds a certain threshold (configurable).
+            ★★★ Hardcore Mode ★★★
+
+            - You only got limited hits, you ran out, you die. (true death)
+            - The number will now display amount of your remaining hits.
+            - Giga Bomb explodes with Metal Pipe Drop sound when you die. (Volume warning)
+            - Rewind your death will crash your game !
+            - Get +1 hit reward when you clear a floor without a hit ! (Can be turned off)
+
+
+        Configurables (Needs ModConfigMenu Mod !!):
+            - Hardcore on or off. (default off)
+            - Max hits you got in Hardcore Mode.
+            - HUD position can be moved freely.
+            - and more.
+
+
+        Compatibility:
+            - Repentance +, Repentance, haven't tested with other DLC.
+            - REPENTOGON mod, Planetarium Chance mod
+            - Should be compatible with other mods that do not modify the HUD.
+
+
+        TO-DO:
+            - Should I also take broken Holy Mantle into account ? :)
+            - ...
 
         This is my first mod, so please be gentle with feedback. I hope you find it useful!
 
-        Special thanks to @Peachee, whose Planetarium Chance mod served as a great reference.
+        Special thanks to @Peachee, whose Planetarium Chance mod served as a great reference.And to @- coolpew -, whose Giga-Explode on (True) Death mod gave me some inspiration on death effects.
 
-</description>
-    <version>1.1</version>
+        PLEASE SUBSCRIBE ~~~~
+
+    </description>
+    <version>1.2</version>
     <visibility>Public</visibility>
-    <tag id="Lua"/>
-    <tag id="Graphics"/>
-    <tag id="Shaders"/>
+    <tag id="Lua" />
+    <tag id="Graphics" />
+    <tag id="Shaders" />
 </metadata>

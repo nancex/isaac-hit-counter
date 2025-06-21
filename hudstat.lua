@@ -108,8 +108,13 @@ function hudstat:init(mod)
 
 		hudstat:__updateCheck()
 
+		local coords = self.coords
+		if self.posBias then
+			coords = coords + self.posBias
+		end
+
 		--account for screenshake offset
-		local textCoords = self.coords + Game().ScreenShakeOffset
+		local textCoords = coords + Game().ScreenShakeOffset
 
 		self.font:DrawString(self.renderString, textCoords.X + 16, textCoords.Y + 1, KColor(1, 1, 1, 0.5), 0, true)
 
@@ -124,7 +129,7 @@ function hudstat:init(mod)
 		end
 		if self.hudSprite:IsLoaded() then
 			self.hudSprite.Scale = Vector(iconScale, iconScale)
-			self.hudSprite:Render(self.coords + Vector(8, 8))
+			self.hudSprite:Render(coords + Vector(8, 8))
 		end
 
 		--text differential popup
@@ -152,8 +157,6 @@ function hudstat:init(mod)
 	mod:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, function()
 		dogmaEnded = false
 		self:__updatePosition()
-	end)
-	mod:AddCallback(ModCallbacks.MC_PRE_GAME_EXIT, function()
 	end)
 
 	--Custom Shader Fix by AgentCucco
@@ -185,6 +188,10 @@ function hudstat:setDiff(positive, diff, extraFrames)
 	self.diffCurFrame = 1
 	self.extraFrames = extraFrames or self.extraFrames
 	self.fontalpha = 0.5
+end
+
+function hudstat:setPosBias(bias)
+	self.posBias = bias
 end
 
 --------------------------------------------------------------------------------------
